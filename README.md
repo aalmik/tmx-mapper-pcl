@@ -16,3 +16,9 @@ protected async override void LoadContent()
             Map levelMap = await Map.Load(file);
         }
 ```
+
+## Change Log:
+
+tmx-mapper-pcl 1.0.0
+- Source code uploaded 
+- Added support for basic TMX map elements
