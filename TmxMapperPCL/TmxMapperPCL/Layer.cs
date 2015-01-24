@@ -41,6 +41,10 @@ namespace TmxMapperPCL
         [XmlElement("data")]
         public Data Data { get; set; }
 
+        [XmlArray("properties")]
+        [XmlArrayItem("property")]
+        public List<Property> Property { get; set; }    
+
         // TODO: properties
         // Can contain: properties, data
     }
