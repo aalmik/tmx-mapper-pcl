@@ -29,8 +29,9 @@ namespace TmxMapperPCL
         // trans - optional
         [XmlAttribute(DataType="string", AttributeName="trans")]
         public string Trans { get; set; }
-
-        // TODO:
+       
         // Can contain: data (since 0.9.0)
+        [XmlElement("data")]
+        public Data Data { get; set; }
     }
 }
