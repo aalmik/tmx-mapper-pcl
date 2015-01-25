@@ -17,6 +17,9 @@ namespace TmxMapperPCL
 
         [XmlElement("tile")]
         public List<DataTile> Tiles { get; set; }
+
+        [XmlText]
+        public string Value { get; set; }
     }
 
     public class DataTile
