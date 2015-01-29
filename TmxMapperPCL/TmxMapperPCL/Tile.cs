@@ -9,19 +9,29 @@ namespace TmxMapperPCL
 {   
     public class Tile
     {
-        [XmlAttribute(DataType="int", AttributeName="id")]      
-        public int ID { get; set; }
+        // id
+        [XmlAttribute(DataType="string", AttributeName="id")]      
+        public string TileID { get; set; }
+       
+        // terrain
+        [XmlElement(ElementName = "terrain")]
+        public Terrain Terrain { get; set; }
 
+        // probability
+        [XmlAttribute(DataType="string", AttributeName="probability")]
+        public string Probability { get; set; }
+
+        // image
         [XmlElement(ElementName = "image")]
         public Image Image { get; set; }
 
-        // TODO: optional - terrain
-        // TODO: optional - probability
+        // ObjectGroup
+        [XmlElement(ElementName = "objectgroup")]
+        public List<ObjectGroup> ObjectGroups { get; set; }     
 
+        // properties
         [XmlArray("properties")]
         [XmlArrayItem("property")]
-        public List<Property> Property { get; set; }     
-   
-        // TODO: objectgroup
+        public List<Property> Properties { get; set; }                       
     }
 }

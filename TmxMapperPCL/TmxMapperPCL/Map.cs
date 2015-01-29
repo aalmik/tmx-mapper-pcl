@@ -52,16 +52,23 @@ namespace TmxMapperPCL
 
         // Can contain: properties, tileset, layer, objectgroup, imagelayer
 
-        // What is the proper data type?
+      
         [XmlElement(ElementName = "tileset")]
         public TileSet TileSet { get; set; }
 
         // Layer
-        [XmlElement("layer")]
+        [XmlElement(ElementName = "layer")]
         public List<Layer> Layers { get; set; }                        
 
-        // TODO: ObjectGroup
-        // TODO: ImageLayer
+        // ObjectGroup
+        [XmlElement(ElementName= "objectgroup")]
+        public List<ObjectGroup> ObjectGroups { get; set; }     
+
+
+        // ImageLayer
+        [XmlElement(ElementName = "imagelayer")]
+        public ImageLayer ImageLayer { get; set; }
+
               
         public static async Task<Map> Load(StorageFile storageFile)
         {     
