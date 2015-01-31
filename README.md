@@ -19,6 +19,10 @@ protected async override void LoadContent()
 
 ## Change Log:
 
+tmx-mapper-pcl 1.1.0
+ - Supports for Tiled Map TMX format 0.10.0.
+ - Published Nuget package TmxMapperPCL.1.1.0.nupkg
+
 tmx-mapper-pcl 1.0.0
 - Source code uploaded 
 - Added support for basic TMX map elements
