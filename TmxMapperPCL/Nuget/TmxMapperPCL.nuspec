@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>TmxMapperPCL</id>
+    <version>1.1.0</version>
+    <title>Tmx Mapper PCL</title>
+    <authors>Mika Aaltonen</authors>
+    <owners>Mika Aaltonen</owners>
+    <licenseUrl>https://github.com/aalmik/tmx-mapper-pcl/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/aalmik/tmx-mapper-pcl</projectUrl>   
+	<iconUrl>https://github.com/aalmik/tmx-mapper-pcl/blob/master/tmx_mapper_pcl.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+	<summary>Tiled map file parser for Windows Runtime apps</summary>
+    <description>
+	Tiled map file parser for Windows Runtime apps.
+	This Portable Class library works in both Windows Phone Store 8.1 and Windows Store 8.1 application projects started from universal application template. 
+	Library is targeted for portable-netcore451+wpa81
+	</description>
+	<releaseNotes>First NuGet package version of the library targeted for portable-netcore451+wpa81</releaseNotes>
+    <copyright>Copyright 2015</copyright>
+    <tags>tmx tiled tmxmapper game tile map winrt</tags>	
+  </metadata>
+  <files>
+	<file src="lib\portable-netcore451+wpa81\TmxMapperPCL.dll" target="lib\portable-netcore451+wpa81\TmxMapperPCL.dll" />
+  </files>
+</package>
