@@ -17,8 +17,9 @@ namespace TmxMapperPCL
         [XmlAttribute(DataType="int", AttributeName="firstgid")]
         public int FirstGID { get; set; }
 
-        // TODO: source - optional
-
+        // source
+        [XmlAttribute(DataType="string", AttributeName="source")]
+        public string Source { get; set; }
         
         // name
         [XmlAttribute(DataType="string", AttributeName="name")]
@@ -43,12 +44,23 @@ namespace TmxMapperPCL
         [XmlElement(ElementName = "tileoffset")]
         public TileOffset TileOffset { get; set; }
 
-        [XmlElement("tile")]
+        [XmlElement(ElementName = "tile")]
         public List<Tile> Tiles { get; set; }
 
-        // TODO: Properties
-        // TODO: Image
-        // TODO: TerrainTypes
+        // Properties
+        [XmlArray("properties")]
+        [XmlArrayItem("property")]
+        public List<Property> Properties { get; set; }    
+        
+        // Image
+        [XmlElement(ElementName = "image")]
+        public Image Image { get; set; }
+
+
+        // TerrainTypes
+        [XmlArray("terraintypes")]
+        [XmlArrayItem("terrain")]
+        public List<Terrain> TerrainTypes { get; set; }    
               
         // Can contain: tileoffset (since 0.8.0), properties (since 0.8.0), image, terraintypes (since 0.9.0), tile
     }

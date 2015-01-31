@@ -15,8 +15,11 @@ namespace TmxMapperPCL
         [XmlAttribute(DataType="string", AttributeName="compression")]
         public string Compression { get; set; }
 
-        [XmlElement("tile")]
+        [XmlElement(ElementName = "tile")]
         public List<DataTile> Tiles { get; set; }
+
+        [XmlText]
+        public string Value { get; set; }
     }
 
     public class DataTile

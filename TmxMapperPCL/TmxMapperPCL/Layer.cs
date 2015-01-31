@@ -25,23 +25,27 @@ namespace TmxMapperPCL
         [XmlAttribute(DataType = "int", AttributeName = "width")]
         public int Width { get; set; }
 
-
         // height       
         [XmlAttribute(DataType = "int", AttributeName = "height")]
         public int Height { get; set; }
 
         // opacity
-        [XmlAttribute(DataType = "int", AttributeName = "opacity")]
-        public int Opacity { get; set; }
-        
-        // visible
-        [XmlAttribute(DataType = "int", AttributeName = "visible")]
-        public int Visible { get; set; }
+        [XmlAttribute(DataType = "boolean", AttributeName = "opacity")]
+        public bool Opacity { get; set; }
 
-        [XmlElement("data")]
+        // visible
+        [XmlAttribute(DataType = "boolean", AttributeName = "visible")]
+        public bool Visible { get; set; }
+       
+        // data
+        [XmlElement(ElementName = "data")]
         public Data Data { get; set; }
 
-        // TODO: properties
+        // properties
+        [XmlArray("properties")]
+        [XmlArrayItem("property")]
+        public List<Property> Properties { get; set; }    
+      
         // Can contain: properties, data
     }
 }

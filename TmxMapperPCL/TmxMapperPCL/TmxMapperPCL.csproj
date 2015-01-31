@@ -43,15 +43,20 @@
   <ItemGroup>
     <Compile Include="Data.cs" />
     <Compile Include="Image.cs" />
+    <Compile Include="ImageLayer.cs" />
     <Compile Include="Layer.cs" />
     <Compile Include="Map.cs" />
+    <Compile Include="Object.cs" />
+    <Compile Include="ObjectGroup.cs" />
     <Compile Include="Property.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Terrain.cs" />
     <Compile Include="Tile.cs" />
     <Compile Include="TileOffset.cs" />
     <Compile Include="TileSet.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+    
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
@@ -59,4 +64,13 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <Target Name="AfterBuild">
+    <Copy Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' "
+          SourceFiles="$(TargetPath)" ContinueOnError="true"
+          DestinationFolder="$(SolutionDir)Nuget\lib\portable-netcore451+wpa81\" />
+
+    <Exec
+    WorkingDirectory="$(SolutionDir)Nuget\"
+    Command="%22C:\Program Files (x86)\NuGet\NuGet.exe%22 pack TmxMapperPCL.nuspec" />
+  </Target>
 </Project>
