@@ -4,6 +4,11 @@ This library is intended for use with Monogame framework and Windows runtime Uni
 
 ## Usage:
 ```
+using System;
+using System.Threading.Tasks;
+using TmxMapperPCL;
+....
+
 private async Task<StorageFile> GetStorageFile()
         {
             StorageFolder installedLocation = Windows.ApplicationModel.Package.Current.InstalledLocation;
