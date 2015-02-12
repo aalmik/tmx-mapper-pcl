@@ -19,12 +19,12 @@ namespace TmxMapperPCL
 
         // Sample:
         // <map version="1.0" orientation="orthogonal" renderorder="right-down" width="11" height="6" tilewidth="128" tileheight="128">
-       
+        // Can contain: properties, tileset, layer, objectgroup, imagelayer
+
         [XmlAttribute(DataType = "string", AttributeName = "version")]
         public string Version { get; set; }
        
-        //orientation - enum       
-        // What is the proper data type?
+        //orientation - enum               
         [XmlAttribute(AttributeName="orientation")]
         public Orientation Orientation { get; set; }
 
@@ -41,20 +41,14 @@ namespace TmxMapperPCL
         [XmlAttribute(DataType = "int", AttributeName = "height")]
         public int Height { get; set; }
 
-
         [XmlAttribute(DataType = "int", AttributeName = "tilewidth")]
         public int TileWidth { get; set; }
 
-
         [XmlAttribute(DataType = "int", AttributeName = "tileheight")]
         public int TileHeight { get; set; }
-
-
-        // Can contain: properties, tileset, layer, objectgroup, imagelayer
-
-      
+              
         [XmlElement(ElementName = "tileset")]
-        public TileSet TileSet { get; set; }
+        public List<TileSet> TileSets { get; set; }
 
         // Layer
         [XmlElement(ElementName = "layer")]
@@ -63,7 +57,6 @@ namespace TmxMapperPCL
         // ObjectGroup
         [XmlElement(ElementName= "objectgroup")]
         public List<ObjectGroup> ObjectGroups { get; set; }     
-
 
         // ImageLayer
         [XmlElement(ElementName = "imagelayer")]
