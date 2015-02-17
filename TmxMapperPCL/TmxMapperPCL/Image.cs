@@ -33,5 +33,13 @@ namespace TmxMapperPCL
         // Can contain: data (since 0.9.0)
         [XmlElement(ElementName = "data")]
         public Data Data { get; set; }
+
+        // Image position X coordinate. Does not exists in tiled format.
+        [XmlIgnore]
+        public int X { get; set; }
+
+        // Image position Y coordinate. Does not exists in tiled format.
+        [XmlIgnore]        
+        public int Y { get; set; }
     }
 }

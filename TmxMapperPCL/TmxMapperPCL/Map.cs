@@ -66,7 +66,7 @@ namespace TmxMapperPCL
         public static async Task<Map> Load(StorageFile storageFile)
         {     
             IInputStream sessionInputStream = await storageFile.OpenReadAsync();
-
+            
             var serializer = new XmlSerializer(typeof(Map));
             return (Map)serializer.Deserialize(sessionInputStream.AsStreamForRead());                                  
         }
