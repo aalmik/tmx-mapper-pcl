@@ -33,5 +33,5 @@ using System.Runtime.InteropServices;
 // Information about NuGet versioning: http://docs.nuget.org/docs/reference/versioning
 // This is used in NuGet package!
 // semver1: 2.0.0-alpha1 semver2: 2.0.0-alpha.2.1.4
-[assembly: AssemblyInformationalVersion("1.2.0-alpha2")]
+[assembly: AssemblyInformationalVersion("1.2.0-alpha4")]
 

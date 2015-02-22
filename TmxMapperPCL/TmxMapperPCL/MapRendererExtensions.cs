@@ -96,5 +96,83 @@ namespace TmxMapperPCL
 
             return map.TileSets[tileSets - 1];
         }
+
+        /// <summary>
+        /// Get property value
+        /// </summary>
+        /// <param name="tileSet"></param>
+        /// <param name="propertyName">Property name</param>
+        /// <param name="defaultValue">Return value if property not found or value conversion failed</param>
+        /// <returns>Property value</returns>
+        public static float GetNumberValue(this TileSet tileSet, string propertyName, float defaultValue){
+            Property tileSetProperty = tileSet.Properties.Find(p => p.Name == propertyName);
+            return GetNumberValue(tileSetProperty, defaultValue);            
+        }
+
+        /// <summary>
+        /// Get property value
+        /// </summary>
+        /// <param name="layer"></param>
+        /// <param name="propertyName">Property name</param>
+        /// <param name="defaultValue">Return value if property not found or value conversion failed</param>
+        /// <returns>Property value</returns>
+        public static float GetNumberValue(this Layer layer, string propertyName, float defaultValue)
+        {
+            Property layerProperty = layer.Properties.Find(p => p.Name == propertyName);
+            return GetNumberValue(layerProperty, defaultValue);                
+        }
+
+
+        private static float GetNumberValue(Property property, float defaultValue)
+        {
+            if (property == null)
+                return defaultValue;
+
+            float returnValue;
+            bool convertResult = float.TryParse(property.Value, out returnValue);
+            if (convertResult)
+            {
+                return returnValue;
+            }
+            else
+            {
+                return defaultValue;
+            }            
+        }
+
+
+        /// <summary>
+        /// Get property value
+        /// </summary>
+        /// <param name="tileSet"></param>
+        /// <param name="propertyName">Property name</param>
+        /// <param name="defaultValue">Return value if property not found</param>
+        /// <returns>Property value</returns>
+        public static string GetStringValue(this TileSet tileSet, string propertyName, string defaultValue)
+        {
+            Property tileSetProperty = tileSet.Properties.Find(p => p.Name == propertyName);
+            return GetStringPropertyValue(tileSetProperty, defaultValue);          
+        }
+
+        /// <summary>
+        /// Get property value
+        /// </summary>
+        /// <param name="layer"></param>
+        /// <param name="propertyName">Property name</param>
+        /// <param name="defaultValue">Return value if property not found</param>
+        /// <returns>Property value</returns>
+        public static string GetStringValue(this Layer layer, string propertyName, string defaultValue)
+        {
+            Property layerProperty = layer.Properties.Find(p => p.Name == propertyName);
+            return GetStringPropertyValue(layerProperty, defaultValue);          
+        }
+                
+        private static string GetStringPropertyValue(Property property, string defaultValue)
+        {
+            if (property != null)
+                return property.Value;
+            return defaultValue;
+        }
+
     }
 }
