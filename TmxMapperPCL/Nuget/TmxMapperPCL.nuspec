@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>TmxMapperPCL</id>
-    <version>1.2.0-alpha4</version>
+    <version>1.2.0-alpha5</version>
     <title>Tmx Mapper PCL</title>
     <authors>Mika Aaltonen</authors>
     <owners>Mika Aaltonen</owners>

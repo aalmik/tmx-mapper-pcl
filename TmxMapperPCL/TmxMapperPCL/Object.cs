@@ -59,6 +59,11 @@ namespace TmxMapperPCL
         // TODO: polyline
         [XmlElement(ElementName= "polyline")]
         public Polyline Polyline { get; set; }
+
+        // Properties
+        [XmlArray("properties")]
+        [XmlArrayItem("property")]
+        public List<Property> Properties { get; set; }  
     }
 
     public class Ellipse
