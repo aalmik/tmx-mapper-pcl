@@ -122,6 +122,20 @@ namespace TmxMapperPCL
             return GetNumberValue(layerProperty, defaultValue);                
         }
 
+        /// <summary>
+        /// Get property value
+        /// </summary>
+        /// <param name="objectLayer"></param>
+        /// <param name="propertyName">Property name</param>
+        /// <param name="defaultValue">Return value if property not found or value conversion failed</param>
+        /// <returns>Property value</returns>
+        public static float GetNumberValue(this Object objectLayer, string propertyName, float defaultValue)
+        {
+            Property objectLayerProperty = objectLayer.Properties.Find(p => p.Name == propertyName);
+            return GetNumberValue(objectLayerProperty, defaultValue);
+        }
+
+
 
         private static float GetNumberValue(Property property, float defaultValue)
         {
@@ -166,7 +180,22 @@ namespace TmxMapperPCL
             Property layerProperty = layer.Properties.Find(p => p.Name == propertyName);
             return GetStringPropertyValue(layerProperty, defaultValue);          
         }
-                
+
+        /// <summary>
+        /// Get property value
+        /// </summary>
+        /// <param name="objectLayer"></param>
+        /// <param name="propertyName">Property name</param>
+        /// <param name="defaultValue">Return value if property not found</param>
+        /// <returns>Property value</returns>
+        public static string GetStringValue(this Object objectLayer, string propertyName, string defaultValue)
+        {
+            Property objectLayerProperty = objectLayer.Properties.Find(p => p.Name == propertyName);
+            return GetStringPropertyValue(objectLayerProperty, defaultValue);
+        }
+
+
+
         private static string GetStringPropertyValue(Property property, string defaultValue)
         {
             if (property != null)
